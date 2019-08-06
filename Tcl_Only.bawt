@@ -1,0 +1,51 @@
+# Builds Tcl and packages, which do not depend on 3rd party libraries.
+# On Windows all libraries can be compiled with MSys/MinGW.
+
+# Core libraries. Note: this forces an older version of libressl (rather than
+# the latest, 2.9.2) since the latest version cannot be compile on top of musl
+# without a patch.
+#Setup CMake     CMake-3.14.5.7z    CMake.bawt
+Setup ZLib      ZLib-1.2.11.7z     ZLib.bawt       NoLinux NoDarwin
+Setup libressl  libressl-2.8.3.7z  libressl.bawt
+Setup SWIG      SWIG-4.0.0.7z      SWIG.bawt
+#Setup PNG       PNG-1.6.37.7z      PNG.bawt        NoLinux
+
+# Setup LibName         ZipFile                        BuildFile           BuildOptions
+
+# Tcl and Tk.
+Setup Tcl               Tcl-[GetTclVersion].7z         Tcl.bawt            
+Setup TclStubs          Tcl-[GetTclVersion].7z         TclStubs.bawt       
+
+# Compiled Tcl packages.
+Setup critcl            critcl-3.1.17.7z               critcl.bawt         
+Setup DiffUtil          DiffUtil-0.4.1.7z              DiffUtil.bawt       
+Setup memchan           memchan-2.3.7z                 memchan.bawt        
+Setup Mpexpr            Mpexpr-1.2.7z                  Mpexpr.bawt         
+Setup nacl              nacl-1.0.7z                    nacl.bawt           
+Setup nsf               nsf-2.3.0.7z                   nsf.bawt           
+Setup oratcl            oratcl-4.6.7z                  oratcl.bawt         
+Setup rl_json           rl_json-0.9.11.7z              rl_json.bawt        
+Setup tbcload           tbcload-1.7.7z                 tbcload.bawt        
+Setup tclcompiler       tclcompiler-1.7.1.7z           tclcompiler.bawt    
+Setup tclcsv            tclcsv-2.3.7z                  tclcsv.bawt    
+Setup tclparser         tclparser-1.8.7z               tclparser.bawt      
+Setup tclvfs            tclvfs-1.4.2.7z                tclvfs.bawt         
+Setup tdom              tdom-0.9.1.7z                  tdom.bawt           
+Setup tserialport       tserialport-1.1.7z             tserialport.bawt    
+Setup udp               udp-1.0.11.7z                  udp.bawt            
+
+# Pure Tcl/Tk packages.
+Setup tclargp           tclargp-0.2.7z                 tclargp.bawt        
+Setup mqtt              mqtt-2.0.7z                    mqtt.bawt        
+Setup ruff              ruff-0.4.7z                    ruff.bawt           
+Setup tcllib            tcllib-1.19.7z                 tcllib.bawt         
+
+# Extended Tcl-only packages
+Setup   tcltls      tcltls-1.7.18.7z     tcltls.bawt      
+#Setup   tzint       tzint-1.1.7z         tzint.bawt       
+
+#Setup   libgd       libgd-2.2.5.7z       libgd.bawt       
+#Setup   tclgd       tclgd-1.2.7z         tclgd.bawt       
+
+Setup   libffi      libffi-3.2.1.7z      libffi.bawt       
+Setup   Ffidl       Ffidl-0.8.0.7z       Ffidl.bawt 
